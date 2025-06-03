@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contactez-nous{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Contactez Votre Maçon</h1>
+
+        {# Affichage des messages flash (pour le succès de l'envoi du formulaire) #}
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <p class="text-center mb-4">
+                    Vous avez un projet ? Des questions ? N'hésitez pas à nous contacter via le formulaire ci-dessous. Nous nous engageons à vous répondre dans les plus brefs délais.
+                </p>
+                {{ form_start(contactForm) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form_row(contactForm.lastName) }}
+                        </div>
+                        <div class="col-md-6">
+                            {{ form_row(contactForm.firstName) }}
+                        </div>
+                    </div>
+                    {{ form_row(contactForm.phoneNumber) }}
+                    {{ form_row(contactForm.projectType) }}
+                    {{ form_row(contactForm.message) }}
+                    <div class="text-center">
+                        {{ form_row(contactForm.submit) }}
+                    </div>
+                {{ form_end(contactForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

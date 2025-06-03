@@ -1,0 +1,31 @@
+
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Nos Services{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Découvrez nos Services</h1>
+
+        <div class="row justify-content-center">
+            {% for service in services %}
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100 shadow-sm border-0">
+                       
+                        <a href=" {{path('app_service_detail', {id: service.id})}} " >
+                            <img src="{{ asset(service.imagePath) }}" class="card-img-top" alt="{{ service.name }}">
+                        </a>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ service.name }}</h5>
+                            <p class="card-text text-muted">{{ service.description|length > 100 ? service.description|slice(0, 100) ~ '...' : service.description }}</p>
+                            <a href=" {{path('app_service_detail', {id: service.id})}}" class="btn btn-outline-primary btn-sm mt-2">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		<div
+			class="row align-items-center">
+			{# Moitié Texte #}
+			<div
+				class="col-md-6 mb-4 mb-md-0">
+				{# mb-4 pour l'espace sur mobile #}
+				<h1 class="display-4 mb-4">Entreprise de maçonnerie à Douai</h1>
+				<p class="lead">Confiez vos projets de maçonnerie à Douai à LE MAÇON, votre partenaire fiable pour des résultats qui dépassent vos attentes.</p>
+
+				<h2 class="display-4 mb-4">Spécialistes de la maçonnerie à Douai</h2>
+
+				<p>
+					À Douai, LE MAÇON s'engage à fournir un service client exceptionnel à chaque étape de votre projet de maçonnerie, garantissant une expérience transparente et satisfaisante du début à la fin. Notre équipe dévouée à Douai est disponible pour répondre à toutes vos questions, prendre en compte vos besoins spécifiques et vous fournir des conseils d'experts pour faire de votre vision une réalité.
+					Avec LE MAÇON à Douai, vous pouvez avoir confiance en notre engagement envers votre satisfaction et notre volonté de dépasser vos attentes à chaque interaction.
+					
+                  </p>  
+                    <h6 class="display-4 mb-4">Utilisation de matériaux de qualité pour les travaux de maçonnerie à Douai</h6>
+<p>À Douai, LE MAÇON est engagée à utiliser des matériaux écologiques dans tous ses projets de maçonnerie, contribuant ainsi à la préservation de l'environnement et à la création de bâtiments durables. Notre entreprise à Douai privilégie les matériaux haut de gamme, les produits certifiés écologiques et les pratiques de construction respectueuses de l'environnement, afin de minimiser notre empreinte carbone et de promouvoir un avenir plus durable pour les générations futures.
+Votre projet à Douai manque de savoir-faire en construction ? Appelez LE MAÇON pour un résultat impeccable
+				</p>
+				<a href="{{ path('app_contact') }}" class="btn btn-primary btn-lg mt-3">Demander un Devis Gratuit</a>
+			</div>
+
+			{# Moitié Image #}
+			<div class="col-md-6 text-center">
+				<img src="{{ asset('public/images/services/macon.jpg') }}" class="img-fluid rounded shadow-lg" alt="Maçon en plein travail sur un chantier"  >
+			</div>
+		</div>
+	</div>
+{% endblock %}
